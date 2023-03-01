@@ -9,3 +9,5 @@
 * There are hit sounds when dying or eating an apple
 
 ![image](https://user-images.githubusercontent.com/104282488/222281706-169e0f01-5397-4318-86e0-ec148b67381d.png)
+
+* <strong>To run this project without any problems you should install SFML libary from their official  [site](https://www.sfml-dev.org/index.php)</strong>
