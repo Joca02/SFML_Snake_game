@@ -71,7 +71,7 @@ int main() {
 
     if(!eating_buff.loadFromFile("C:\\Users\\pc\\Desktop\\programiranje\\Snake_game\\music\\Eating_SE.wav"))
     {
-        std::cout<<"Greska pri ucitavanju game over sounda\n";
+        std::cout<<"Greska pri ucitavanju eating sounda\n";
         system("pause");
     }
 
