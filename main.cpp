@@ -229,11 +229,9 @@ void generisi_jabuku()
     }while(jabuka_sece_zmiju);
 
     jabuka.setPosition(x,y);
-
     jabuka.setPosition(x,y);
-    window.draw(jabuka);
-
 }
+
 void pomeraj_glave(char c)
 {
    //Sleep(DELAY) pravi manje smooth kretanje od sledece 2 linije
