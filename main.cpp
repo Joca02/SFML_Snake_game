@@ -231,7 +231,7 @@ void generisi_jabuku()
     jabuka.setPosition(x,y);
 
     jabuka.setPosition(x,y);
-    //window.draw(jabuka);
+    window.draw(jabuka);
 
 }
 void pomeraj_glave(char c)
