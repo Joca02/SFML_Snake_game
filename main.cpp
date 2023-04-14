@@ -12,7 +12,7 @@
 #define JAB_HEIGHT 40
 
 #define MOVE 40     //za koliko ce se segment zmije pomeriti
-#define DELAY 45    //koliko je kasnjenje do sledeceg pomeraja
+#define DELAY 60    //koliko je kasnjenje do sledeceg pomeraja
 
 #define SNAKE_WIDTH 40
 #define SNAKE_HEIGHT 40
@@ -115,14 +115,10 @@ int main() {
     snake.at(1).setFillColor(sf::Color::Green);
     koordinate_pokreta.at(0)=snake.at(0).getPosition();
     jabuka.setFillColor(sf::Color::Red);
-
-
     generisi_jabuku();
-    window.draw(jabuka);
+
     while (window.isOpen())
     {
-
-
         sf::Event event;
         char c;
 
@@ -135,11 +131,10 @@ int main() {
                 if(isDead== true)
                 {
                     score=0;
-                    c='w';
+                    c=' ';  //da bi igrac mogao sam da odredi pocetni pravac
                 }
 
                 isDead=false;
-
             }
             else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
                 window.close();
@@ -165,27 +160,24 @@ int main() {
                     if(snake[0].getPosition().y<=snake[1].getPosition().y)
                         c='s';
                 }
-
             }
-
         }
-
-        pomeraj_glave(c);
 
 
         if(isDead== false)
         {
-
+            pomeraj_glave(c);
             window.draw(jabuka);
             window.draw(txtGameName);
             txtScore.setCharacterSize(40);
             txtScore.setString(std::to_string(score));
             txtScore.setPosition(1800,0);
             window.draw(txtScore);
-
         }
+
         else
         {
+            window.clear();
             txtScore.setCharacterSize(64);
             txtScore.setString("LAST SCORE :");
             txtScore.setPosition(630,600);
@@ -196,13 +188,12 @@ int main() {
             txtScore.setPosition(1130,600);
             window.draw(txtScore);
 
-            resetuj_zmiju();
+           resetuj_zmiju();
+           window.draw(snake.at(0));
+           window.draw(snake.at(1));
         }
 
-
         window.display();
-
-
     }
 
 
@@ -239,9 +230,8 @@ void generisi_jabuku()
 
     jabuka.setPosition(x,y);
 
-    std::cout<<x<<" "<<y<<std::endl;
     jabuka.setPosition(x,y);
-    window.draw(jabuka);
+    //window.draw(jabuka);
 
 }
 void pomeraj_glave(char c)
@@ -258,7 +248,6 @@ void pomeraj_glave(char c)
             {
                 death_sound.play();
                 isDead= true;
-
             }
             break;
 
@@ -269,7 +258,6 @@ void pomeraj_glave(char c)
             if(snake.at(0).getPosition().y<0)
             {
                 death_sound.play();
-
                 isDead= true;
             }
             break;
@@ -334,12 +322,7 @@ void pomeraj_tela()
 
 void generisi_skretanje()
 {
-
     koordinate_pokreta.push_back(sf::Vector2f(snake.at(0).getPosition().x,snake.at(0).getPosition().y));
-
-    std::cout<<koordinate_pokreta.at(0).x<<" "<<snake.at(snake.size()-1).getPosition().x<<"\n";
-    std::cout<<koordinate_pokreta.at(0).y<<" "<<snake.at(snake.size()-1).getPosition().y<<"\n";
-
 }
 
 
