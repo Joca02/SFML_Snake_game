@@ -215,8 +215,11 @@ void generisi_jabuku()
     bool jabuka_sece_zmiju=true;
     sf::RectangleShape rect(sf::Vector2f(JAB_WIDTH,JAB_HEIGHT));
     do{
-        x=rand()% (WINDOW_WIDTH-JAB_WIDTH);
-        y=rand()% (WINDOW_HEIGHT-JAB_HEIGHT);
+        //unutar rand delim sa sirinom/visinom pa posle mnozim da bih dobio brojeve deljive sa sirinom jabuke/zmijine glave
+        x=rand()% ((WINDOW_WIDTH-JAB_WIDTH)/JAB_WIDTH);
+        y=rand()% ((WINDOW_HEIGHT-JAB_HEIGHT)/JAB_HEIGHT);
+        x*=JAB_WIDTH;
+        y*=JAB_HEIGHT;
         rect.setPosition(x,y);
         jabuka_sece_zmiju=false;
         for(int i=0;i<snake.size();i++)
