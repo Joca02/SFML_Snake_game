@@ -177,6 +177,7 @@ int main() {
 
         else
         {
+            pomeraj_tela(); //ovim pri resetu na pocetnu poziciju sprecavam da se rep renderuje na poziciji u trenutku smrti
             window.clear();
             txtScore.setCharacterSize(64);
             txtScore.setString("LAST SCORE :");
