@@ -147,7 +147,7 @@ int main() {
                 }
                 else if((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W)||sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Up)) && c!='s'&& isDead==false)
                 {
-                    if(snake[0].getPosition().y>=snake[1].getPosition().y)
+                    if(snake[0].getPosition().y<=snake[1].getPosition().y)
                         c='w';
                 }
                 else if((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D)|| sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Right))  && c!='a'&& isDead==false)
@@ -157,7 +157,7 @@ int main() {
                 }
                 else if((sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Down)) && c!='w'&& isDead==false)
                 {
-                    if(snake[0].getPosition().y<=snake[1].getPosition().y)
+                    if(snake[0].getPosition().y>=snake[1].getPosition().y)
                         c='s';
                 }
             }
